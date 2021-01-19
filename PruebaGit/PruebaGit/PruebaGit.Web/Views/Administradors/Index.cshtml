@@ -1,0 +1,73 @@
+﻿@model IEnumerable<PruebaGit.Web.Models.Administrador>
+
+@{
+    ViewBag.Title = "Index";
+}
+            <p class="mt-3">
+                @if(User.IsInRole("Administrator"))
+                {
+                <a data-toggle="modal" data-target="#AddModal" class="nav navbar-brand text-dark btn btn-outline-info" href="#">Agregar empleados </a>
+                }
+            </p>
+
+<div class="container">
+    <div class="row justify-content-center">
+        <p>
+            @Html.ActionLink("Agregar un nuevo administrador", "Create", "Administradors", new { @class = "  btn btn-outline-info  navbar-brand text-dark" })
+        </p>
+        <div class="col-md-12 bg-info">
+            <div class="card">
+                <div class="card-body">
+                    <table class="table table-hover bg-info ">
+
+                        <tr>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Trabajador.Nombre)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Id_Usuario)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Nombre)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.APM)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.APP)
+                            </th>
+                            <th></th>
+                        </tr>
+
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Trabajador.Nombre)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Id_Usuario)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Nombre)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.APM)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.APP)
+                                </td>
+                                <td>
+                                    @Html.ActionLink("Editar", "Edit", new { id = item.Id }, new { @class = "btn btn-warning fas fa-trash text-light" }) |
+                                    @Html.ActionLink("Ver", "Details", new { id = item.Id }, new { @class = "btn btn-success fas fa-eye" }) |
+                                    @Html.ActionLink("Eliminar", "Delete", new { id = item.Id }, new { @class = "btn btn-danger fas fa-trash" })
+                                </td>
+                            </tr>
+                        }
+
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>

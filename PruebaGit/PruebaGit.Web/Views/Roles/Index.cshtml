@@ -1,0 +1,47 @@
+﻿
+@model IEnumerable<PruebaGit.Web.Models.ApplicationUser>
+@{
+    ViewBag.Title = "Tipo de Roles - ";
+}
+
+<div class="container">
+    <div class="row justify-content-center">
+        
+            <div class="col-md-10">
+                <div class="card py-2">
+                    <div class="card-header bg-gradient-danger text-white">
+                        <h4 >
+                           Tipo de Usuario
+                        </h4>
+                    </div>
+                    <div class="card-body">
+                        <table class="table table-hover table-sm bg-gradient-warning text-white">
+                            <tr>
+                                <td>Id</td>
+                                <td>Usuario</td>
+                                <td>Correo</td>
+                                <td>Tipo de Rol</td>
+                                <td>Agregar un Rol</td>
+                            </tr>
+                            @{ 
+                                int count = 1;
+                            }
+                            @foreach (var item in Model)
+                            {
+                        <tr>
+                            <td>@count</td>
+                            <td>@item.UserName</td>
+                            <td>@item.Email</td>
+                            <td>@item.Rol</td>
+                            <td><a href="@Url.Action("AddRoles","Roles",new { id = item.Id })">Agregar</a></td>
+                        </tr>
+                                count++;
+                            }
+                        </table>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+</div>
+

@@ -1,0 +1,38 @@
+﻿@model  PruebaGit.Web.Models.SendEmail
+
+@{
+    ViewBag.Title = "Comentarios - ";
+}
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Comentarios</title>
+</head>
+<body>
+    <div class="container" style="font-family:Montserrat;">
+        <div class="row justify-content-center">
+            <div class="col-md-5">
+                <div class="card">
+                    <h2 class="card-header text-center mt-1 p-2 bg-warning text-dark">Envianos tu Comentario</h2>
+                    @*Se relaciona con el metodo de agregar del controlador*@
+                <form action="@Url.Action("Index")" class="text-center p-1" enctype="multipart/form-data" method="post">
+                    @Html.AntiForgeryToken()
+                    @*Agregamos los botones para llenar los campos*@
+                   
+                    <input type="text" name="Body" placeholder="Escribe tu opinión:" class="form-control col-md-12" />
+                    <br />
+                    <input type="file" name="fichero"/>
+                    <br />
+                    <input type="submit" value="Enviar Comentario" />
+                </form>
+                    
+
+                
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

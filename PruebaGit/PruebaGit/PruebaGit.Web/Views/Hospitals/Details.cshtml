@@ -1,0 +1,39 @@
+﻿@model PruebaGit.Web.Models.Hospital
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<div class="container-fluid text-light">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card bg-info">
+                <div class="card-body text-lg-center">
+                    <div>
+                        <h1>HOSPITAL</h1>
+                        <hr />
+                        <dl class="dl-horizontal">
+                            <dt>
+                                @Html.DisplayNameFor(model => model.Numero_Hospital)
+                            </dt>
+
+                            <dd>
+                                @Html.DisplayFor(model => model.Numero_Hospital)
+                            </dd>
+
+                        </dl>
+                    </div>
+
+                    <div class="form text-center p-3">
+                    @Html.ActionLink("Editar", "Edit", new { id = Model.Id }, new { @class = "text-light btn btn-warning" })
+                    <div class="btn btn-light btn-group-toggle">
+                        @Html.ActionLink("Salir", "Index")
+                    </div>
+                </div>
+                      
+                    </div>
+                </div>
+            </div>
+        
+    </div>
+</div>

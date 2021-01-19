@@ -1,0 +1,43 @@
+﻿@model PruebaGit.Web.Models.Actividad
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card bg-info">
+                <div class="card-header">
+                    <h3 class="card-title text-light">Estas seguro que quieres eliminar este registro?</h3>
+                    <div>
+                        <hr />
+                        <dl class="dl-horizontal">
+                            <dt>    
+                                @Html.DisplayNameFor(model => model.ActividadId)
+                            </dt>
+
+                            <dd>
+                                @Html.DisplayFor(model => model.ActividadId)
+                            </dd>
+
+                        </dl>
+
+                        @using (Html.BeginForm())
+                        {
+                            @Html.AntiForgeryToken()
+
+                            <div class="form-actions">
+                                <input type="submit" value="Eliminar" class="btn btn-danger" />
+                                <div class="btn btn-light float-lg-right">
+                                    @Html.ActionLink("Regresar al Index ", "Index")
+                                </div>
+                            </div>
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>

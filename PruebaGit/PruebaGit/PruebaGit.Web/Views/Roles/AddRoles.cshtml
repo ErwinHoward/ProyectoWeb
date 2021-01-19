@@ -1,0 +1,45 @@
+﻿
+@{
+    ViewBag.Title = "AddRoles";
+}
+
+<h2>AddRoles</h2>
+
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card py-1">
+                <div class="card-header bg-info">
+                    <h5 class="m-1 text-dark">Agregar Rol</h5>
+                    </div>
+                        <div class="card-body">
+                            <form class="" action="@Url.Action("AddRoles","Roles")" method="post">
+                            <div class="form-group">
+                                <label class="col-md-10">usuario</label>
+                                <div class="col-md-10">
+                                    <input type="text" name="UserName" value="@Model.UserName" class="form-control" readonly />
+                                </div>
+                            </div>
+                                <div class="form-group">
+                                    <label>Escoja el Rol</label>
+                                    <div class="col-md-10">
+                                        <select class="form-control" name="RolName">
+                                            <option value=""></option>
+                                            <option value="Administrator">Administrator</option>
+                                            <option value="Doctores">Doctores</option>
+                                            <option value="Actividades">Actividades</option>
+                                            <option value="Hospitales">Hospitales</option>
+                                            <option value="Pacientes">Pacientes</option>                   
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="row justify-content-center">
+                                    <input type="submit" value="Enviar" class="btn btn-success btn-sm"/>
+                                    <a href="@Url.Action("Index","Roles")" class="btn btn-success ml-5">Regresar al index</a>
+                                </div>
+                            </form>
+                        </div>
+                </div>
+            </div>
+        </div>
+    </div>   

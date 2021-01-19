@@ -1,0 +1,90 @@
+﻿@model PruebaGit.Web.Models.Paciente
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Paciente</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Doctor.Nombre_Doctor)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Doctor.Nombre_Doctor)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.No_Paciente)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.No_Paciente)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Nombre_Paciente)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Nombre_Paciente)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AM_Paciente)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AM_Paciente)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AP_Paciente)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AP_Paciente)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Fecha_Nacimiento_Paciente)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Fecha_Nacimiento_Paciente)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Genero_Paciente)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Genero_Paciente)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Numero_Paciente)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Numero_Paciente)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Enfermedad_Paciente)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Enfermedad_Paciente)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

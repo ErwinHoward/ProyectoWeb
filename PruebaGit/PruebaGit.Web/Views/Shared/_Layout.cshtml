@@ -1,0 +1,228 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title Dulce chocolate</title>
+    @Styles.Render("~/Content/css")
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
+    <link rel="stylesheet" href="~/Content/sb-admin-2.min.css" />
+    @Scripts.Render("~/bundles/modernizr")
+    @Styles.Render("~/Content/Site.css")
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap" rel="stylesheet">
+</head>
+<body>
+    
+    <div id="wrapper">
+      
+        <ul class="navbar-nav bg-gradient-danger sidebar sidebar-dark accordion" id="accordionSidebar">
+
+            <li class="">
+                <img style="width: 100px; height: 100px; margin-left:60px; margin-top: 20px;" src="~/Content/img/Dulce_Chocolate.png" />
+
+                <h4 style="margin-left: 30px; color: white; margin-bottom: 20px;">Dulce Chocolate</h4>
+                @if (User.IsInRole("Administrador"))
+                {
+                <li class="nav-item navbar-toggle">
+                    <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseLogin"
+                       aria-expanded="true" aria-controls="collapseLogin">
+                        <i class="fas fa-users-cog"></i>
+                        <span>Inicio de Sesión</span>
+                    </a>
+                    <div id="collapseLogin" class="collapse" aria-labelledby="headingLogin" data-parent="#accordionSidebar">
+                        <div class="bg-white py-2 collapse-inner rounded">
+
+                            <p class="collapse-item">@Html.Partial("_LoginPartial")</p>
+
+                        </div>
+                    </div>
+
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePostres"
+                       aria-expanded="true" aria-controls="collapsePostres">
+                        <i class="fas fa-birthday-cake"></i>
+                        <span>Postres</span>
+                    </a>
+                    <div id="collapsePostres" class="collapse" aria-labelledby="headingPostres"
+                         data-parent="#accordionSidebar">
+                        <div class="bg-white py-1 collapse-inner rounded">
+
+                            <a class="collapse-item" href="@Url.Action("Postres","Home")">Elige tu Favorito</a>
+                        </div>
+                    </div>
+                </li>
+
+
+                <li class="nav-item">
+                    <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseRecetas"
+                       aria-expanded="true" aria-controls="collapseRecetas">
+                        <i class="fas fa-cookie-bite"></i>
+                        <span>Agregar Postre</span>
+                    </a>
+                    <div id="collapseRecetas" class="collapse" aria-labelledby="headingRecetas" data-parent="#accordionSidebar">
+                        <div class="bg-white py-2 collapse-inner rounded">
+
+
+                            <a class="collapse-item" href="@Url.Action("Index","PostreNuevo")">Postre Nuevo</a>
+                        </div>
+                    </div>
+                </li>
+
+
+                <li class="nav-item">
+                    <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseRoles"
+                       aria-expanded="true" aria-controls="collapseRoles">
+                        <i class="fas fa-user-tag"></i>
+                        <span>Roles</span>
+                    </a>
+                    <div id="collapseRoles" class="collapse" aria-labelledby="headingRoles"
+                         data-parent="#accordionSidebar">
+                        <div class="bg-white py-2 collapse-inner rounded">
+
+                            <a class="collapse-item" href="@Url.Action("Index","Roles")">Roles</a>
+
+                        </div>
+                    </div>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePostres1"
+                       aria-expanded="true" aria-controls="collapsePostres1">
+                        <i class="fas fa-clipboard-list"></i>
+                        <span>Recetas</span>
+                    </a>
+                    <div id="collapsePostres1" class="collapse" aria-labelledby="headingPostres1"
+                         data-parent="#accordionSidebar">
+                        <div class="bg-white py-2 collapse-inner rounded">
+
+                            <a class="collapse-item" href="@Url.Action("Index","Recetas")">Ver Recetas</a>
+
+                        </div>
+                    </div>
+                </li>
+            }
+
+                @if (User.IsInRole("Cliente"))
+                {
+                    <li class="nav-item navbar-toggle">
+                        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseLogin"
+                           aria-expanded="true" aria-controls="collapseLogin">
+                            <i class="fas fa-users-cog"></i>
+                            <span>Inicio de Sesión</span>
+                        </a>
+                        <div id="collapseLogin" class="collapse" aria-labelledby="headingLogin" data-parent="#accordionSidebar">
+                            <div class="bg-white py-2 collapse-inner rounded">
+
+                                <p class="collapse-item">@Html.Partial("_LoginPartial")</p>
+
+                            </div>
+                        </div>
+
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePostres"
+                           aria-expanded="true" aria-controls="collapsePostres">
+                            <i class="fas fa-birthday-cake"></i>
+                            <span>Postres</span>
+                        </a>
+                        <div id="collapsePostres" class="collapse" aria-labelledby="headingPostres"
+                             data-parent="#accordionSidebar">
+                            <div class="bg-white py-1 collapse-inner rounded">
+
+                                <a class="collapse-item" href="@Url.Action("Postres","Home")">Elige tu Favorito</a>
+                            </div>
+                        </div>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePostres1"
+                           aria-expanded="true" aria-controls="collapsePostres1">
+                            <i class="fas fa-clipboard-list"></i>
+                            <span>Recetas</span>
+                        </a>
+                        <div id="collapsePostres1" class="collapse" aria-labelledby="headingPostres1"
+                             data-parent="#accordionSidebar">
+                            <div class="bg-white py-2 collapse-inner rounded">
+
+                                <a class="collapse-item" href="@Url.Action("Index","PostreNuevo")">Ver Recetas</a>
+
+                            </div>
+                        </div>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseMail"
+                           aria-expanded="true" aria-controls="collapseMail">
+                            <i class="fas fa-comment"></i>
+                            <span>Enviar Comentario</span>
+                        </a>
+                        <div id="collapseMail" class="collapse" aria-labelledby="headingMail"
+                             data-parent="#accordionSidebar">
+                            <div class="bg-white py-2 collapse-inner rounded">
+
+                                <a class="collapse-item" href="@Url.Action("Index","SendMailer")">Comentarios</a>
+
+                            </div>
+                        </div>
+                    </li>
+                }
+            </ul>
+        <div id="content-wrapper">
+            <div id="content">
+                <nav class="navbar navbar-expand navbar-ligh topbar mb-4 ">
+
+
+                    <a href="https://www.facebook.com/"><img style="width: 24px; height: 24px; margin-left:340px; margin-top: 20px;" src="~/Content/img/facebook.png" /></a>
+
+                    <a href="https://www.messenger.com/"><img style="width: 24px; height: 24px; margin-left:20px; margin-top: 20px;" src="~/Content/img/mensajero.png" /></a>
+
+                    <a href="https://twitter.com/?lang=es"> <img style="width: 24px; height: 24px; margin-left:20px; margin-top: 20px;" src="~/Content/img/gorjeo.png" /></a>
+
+                </nav>
+                <div class="container-fluid">
+                </div>
+            </div>
+           
+            <a id="arriba" class="scroll-to-top rounded" href="#page-top">
+                <i class="fas fa-angle-up"></i>
+            </a>
+
+            <script src="~/Scripts/jquery.min.js"></script>
+
+            <script src="~/Scripts/bootstrap.bundle.min.js"></script>
+            <script src="~/Scripts/jquery.easing.min.js"></script>
+            <script src="~/Scripts/sb-admin-2.min.js"></script>
+            <script src="~/Scripts/Chart.min.js"></script>
+            <script src="~/Scripts/elevator.js"></script>
+            <script src="~/Scripts/chart-area-demo.js"></script>
+            <script src="~/Scripts/chart-pie-demo.js"></script>
+
+            <div class="container body-content">
+                @RenderBody()
+            </div>
+
+            @Scripts.Render("~/bundles/jquery")
+            @Scripts.Render("~/bundles/bootstrap")
+            
+            @RenderSection("scripts", required: false)
+
+            
+        </div>
+    </div>
+   
+    <script>
+
+        window.onload = function arriba() {
+            var elevador = new Elevator({
+                element: document.querySelector("#arriba")
+            });
+        };
+    </script>
+
+</body>
+</html>
+

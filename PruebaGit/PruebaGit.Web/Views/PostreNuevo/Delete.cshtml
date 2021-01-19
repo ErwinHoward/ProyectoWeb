@@ -1,0 +1,37 @@
+﻿@model PruebaGit.Web.Models.Trabajador
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<div class="container text-light" style="font-style:oblique">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card text-center" style="background-color:aliceblue; color:blue;">
+                <h3> Estas seguro que quieres eliminar esto?</h3>
+                <hr />
+                <dl class="dl-horizontal">
+                    <dt>
+                        @Html.DisplayNameFor(model => model.Nombre)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.Nombre)
+                    </dd>
+
+                </dl>
+
+                @using (Html.BeginForm())
+                {
+                    @Html.AntiForgeryToken()
+
+                    <div class="form-actions">
+                        <input type="submit" value="Eliminar" class="btn btn-danger" />
+                        <a href="@Url.Action("Index","Trabajadors")" class="btn btn-primary">Regresar</a>
+                     
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+</div>

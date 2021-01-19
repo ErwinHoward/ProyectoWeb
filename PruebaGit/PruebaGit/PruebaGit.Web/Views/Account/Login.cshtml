@@ -1,0 +1,95 @@
+﻿@using PruebaGit.Web.Models
+@model LoginViewModel
+@{
+    ViewBag.Title = "Iniciar sesión";
+    Layout = null;
+}
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iniciar Sesion</title>
+    <link rel="stylesheet" href="~/Content/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/Content/sb-admin-2.min.css"/>
+</head>  
+<body class=" bg-login-image" style=" background-image: url('https://pixabay.com/get/57e1dd4b4a51aa14f6d1867dda3536781537dfed5a50784a_1920.png');">
+    <div class="container pl-0 " style=" margin-top: 120px;">
+        <div class=" justify-content-center m-3">
+            <div class="col-lg-6 d-none d-lg-block rounded border-primary" style="background: rgba(128, 128, 128, 0.00)">
+                <div class="col-lg-12">
+                    <div class="p-5">
+                        <div class="text-center">
+                            <h1 class="h4 text-gray-900 mb-4">Iniciar Sesion</h1>
+                        </div>
+                        @using (Html.BeginForm("Login", "Account", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+                        {
+                            @Html.AntiForgeryToken()
+                            <hr />
+                            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                            <div class="form-group " style="margin-left: 35px;">
+                                @Html.LabelFor(m => m.Email, new { @class = "col-md-12 control-label text-dark" })
+                                <div class="col-md-10">
+                                    @Html.TextBoxFor(m => m.Email, new { @class = "form-control" })
+                                    @Html.ValidationMessageFor(m => m.Email, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                            <div class="form-group mt-5" style="margin-left: 35px;">
+                                @Html.LabelFor(m => m.Password, new { @class = "col-md-12 control-label text-dark" })
+                                <div class="col-md-10">
+                                    @Html.PasswordFor(m => m.Password, new { @class = "form-control" })
+                                    @Html.ValidationMessageFor(m => m.Password, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                            <div class="form-group" style="margin-left: 108px;">
+                                <div class="col-md-offset-2 col-md-10">
+                                    <div class="checkbox">
+                                        @Html.CheckBoxFor(m => m.RememberMe)
+                                        @Html.LabelFor(m => m.RememberMe)
+                                    </div>
+                                </div>
+                            </div>
+                            <form>
+                                <div class="row">
+                                    <div class="col">
+                                        <p class="text-center" style="margin-left: 25px;">
+                                            <button class="btn btn-warning"> @Html.ActionLink("Nuevo usuario", "Register")</button>
+                                        </p>
+                                    </div>
+                                    <div class="col" style="margin-right: 10px;">
+                                        <div class="col-md-offset-2 col-md-8">
+                                            <input type="submit" value="Iniciar sesión" class="btn btn-primary" />
+
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </form>
+
+                            //Habilite esta opción una vez tenga la confirmación de la cuenta habilitada para la funcionalidad de restablecimiento de contraseña
+                            <p class="text-center">
+                                @Html.ActionLink("¿Ha olvidado su contraseña?", "ForgotPassword")
+                            </p>
+                        }
+                        <hr />
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+                   
+
+    </body>
+</html>
+
+
+
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

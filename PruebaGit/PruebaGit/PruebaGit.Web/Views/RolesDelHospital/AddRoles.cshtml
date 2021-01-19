@@ -1,0 +1,52 @@
+﻿
+@model PruebaGit.Web.Models.ApplicationUser
+@{
+    ViewBag.Title = "AddRoles";
+}
+<div class="container mt-4">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-header">
+                    <h4>Agrega un rol</h4>
+                </div>
+                <div class="card-body">
+                    <form class="" action="@Url.Action("AddRoles","RolesDelHospital")" method="post">
+                        <div class="form-group">
+                            <label class="col-md-10">
+                                Usuario
+                            </label>
+                            <div class="col-md-10">
+                                <input type="hidden" name="UserId" value="@Model.Id" />
+                                <input name="UserName" type="text" value="@Model.UserName" class="form-control" readonly />
+
+                            </div>
+
+                        </div>
+                        <div class=" form-group">
+                            <label> Escoja el rol</label>
+                            <div class="col-md-10">
+                                <select class="form-control" name="RolName">
+                                    <option value="">Elije un rol</option>
+                                    <option value="Actividades">Actividades</option>
+                                    <option value="Administrador">Administrador</option>
+                                    <option value="Doctores">Doctores</option>
+                                    <option value="Hospitales">Hospitales</option>
+                                    <option value="Pacientes">Pacientes</option>
+                                </select>
+                            </div>
+
+                        </div>
+                        <div class="row justify-content-center">
+                            <input type="submit" value="Enviar" class="btn btn-outline-danger btn-sm mr-2" />
+                            
+                            <a href="@Url.Action("Index","RolesDelHospital")" class="btn btn-outline-success ml-2">Regresar</a>
+                        </div>
+                    </form>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

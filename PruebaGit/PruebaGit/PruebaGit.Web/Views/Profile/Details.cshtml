@@ -1,0 +1,107 @@
+﻿@model PruebaGit.Web.Models.ApplicationUser
+@{
+    ViewBag.Title = "Perfil";
+}
+
+
+<div class="row justify-content-center mt-3">
+    <div class="col-md-12">
+        <div class="card">
+            <div class="card-header bg-gradient-primary">
+                <h4 class="m-0 text-center text-light">Perfil  @User.Identity.Name</h4>
+            </div>
+            <div class="card-body">
+                <div class="row justify-content-center">
+                    <a class="col-md-7">
+                        <div class="card">
+                            <img src="~/Upload/@Model.Photo" alt="Picture" class="rounded img-fluid" />
+                            <form class="form-horizontal" action="@Url.Action("Picture","Profile")" method="post" enctype="multipart/form-data">
+                                <input type="file" name="pic" class="form-control" />
+                                <input type="submit" value="Subir foto" class="form-control btn-primary text-light" />
+
+                            </form>
+                        </div>
+                    </a>
+                    <div class="col-md-5">
+                        <div class="card">
+
+                            <div class="card-header  bg-gradient-primary">
+                                <a class="text-light">Informacion de @Model.Name</a>
+
+                                <div class="btn btn-warning float-right text-right" data-toggle="modal" data-target="#AddModal">Editar</div>
+
+
+
+                            </div>
+                            <div class="card-body ">
+                                <table class="table table-hover table-borderless">
+                                    <tr>
+                                        <td>Nombre</td>
+                                        <td>@Model.Name</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Email</td>
+                                        <td>@Model.Email</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Usuario</td>
+                                        <td>@Model.UserName</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Telefono</td>
+                                        <td>@Model.PhoneNumber</td>
+                                    </tr>
+
+                                </table>
+                                <hr />
+                                @*SEGUNDA TABLA*@
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<!-- Modal -->
+<div class="modal fade" id="AddModal" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header bg-gradient-primary">
+                <h5 class="text-light" id="staticBackdropLabel">Editar datos</h5>
+                <button type="button" class="fas fa-window-close 5x bg-danger" data-dismiss="modal" aria-label="Close">
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="container">
+                    <div class="row">
+                        <form class="form-group" action="@Url.Action("Details","Profile")" method="post">
+
+                            <div class="form-group">
+                                <div class="col-md-12">
+                                    <input type="text" name="Name" value="" placeholder="Nombre Completo" />
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <div class="col-md-12">
+                                    <input type="text" name="PhotoNumber" value="" placeholder="Telefono" />
+                                </div>
+                            </div>
+
+                            <div class="container text-center">
+                                <button type="button" class="h5 btn btn-success" data-dismiss="modal">Cerrar</button>
+                                <input type="submit" value="Guardar Cambios" class="btn btn-success" />
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

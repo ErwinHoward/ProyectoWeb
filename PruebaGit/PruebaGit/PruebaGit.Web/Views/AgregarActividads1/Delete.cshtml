@@ -1,0 +1,142 @@
+﻿@model PruebaGit.Web.Models.AgregarActividad
+
+@{
+    ViewBag.Title = "Delete";
+}
+    
+
+<h2 class="text-danger">Eliminar</h2>
+
+<<<<<<< Updated upstream
+<h3>Estas seguro de que quieres eliminar ?</h3>
+<div>
+
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Actividad.Id)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Actividad.Id)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ID_Paciente)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ID_Paciente)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ID_Empleado)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ID_Empleado)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Fecha)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Fecha)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Hora)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Hora)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Actividad_Realizar)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Actividad_Realizar)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-outline-danger" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>
+=======
+<h3> Estas seguro que quieres borrar</h3>
+    <div>
+        <h4>AgregarActividad</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.Actividad.Id)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Actividad.Id)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.ID_Paciente)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.ID_Paciente)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.ID_Empleado)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.ID_Empleado)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Fecha)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Fecha)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Hora)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Hora)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Actividad_Realizar)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Actividad_Realizar)
+            </dd>
+
+        </dl>
+
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+
+            <div class="form-actions no-color">
+                <input type="submit" value="Delete" class="btn btn-default" /> |
+                @Html.ActionLink("Back to List", "Index")
+            </div>
+        }
+    </div>
+>>>>>>> Stashed changes
